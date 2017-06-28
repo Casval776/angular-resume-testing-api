@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>resume-testing-api</name>
+    </assembly>
+    <members>
+        <member name="M:resume_testing_api.Controllers.Users.Interfaces.IUserController.Login(resume_testing_api.Models.UserModel.User)">
+            <summary>
+            Public-facing endpoint to log in a user with the specified credentials.
+            </summary>
+            <param name="user">Qualified User object containing username/password</param>
+            <returns>IHttpActionResult.Ok with result of login process</returns>
+        </member>
+        <member name="M:resume_testing_api.Controllers.Users.Interfaces.IUserController.Logout(resume_testing_api.Models.UserModel.User)">
+            <summary>
+            Public-facing endpoint to log out a user with the specified credentials.
+            </summary>
+            <param name="user">Qualified User object containing username/token</param>
+            <returns>IHttpActionResult.Ok with result of logout process</returns>
+        </member>
+        <member name="M:resume_testing_api.Controllers.Users.UserController.Login(resume_testing_api.Models.UserModel.User)">
+            <summary>
+            Public-facing endpoint to log in a user with the specified credentials.
+            </summary>
+            <param name="user">Qualified User object containing username/password</param>
+            <returns>
+            IHttpActionResult.Ok with result of login process
+            </returns>
+        </member>
+        <member name="M:resume_testing_api.Controllers.Users.UserController.Logout(resume_testing_api.Models.UserModel.User)">
+            <summary>
+            Public-facing endpoint to log out a user with the specified credentials.
+            </summary>
+            <param name="user">Qualified User object containing username/token</param>
+            <returns>
+            IHttpActionResult.Ok with result of logout process
+            </returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:resume_testing_api.Services.Users.Interfaces.IUserService.Login(resume_testing_api.Models.UserModel.Interfaces.IUser)">
+            <summary>
+            Processes the login functionality, successfully logging the user in and returning a token.
+            </summary>
+            <param name="user">Qualified User credentials</param>
+            <returns>Login Token or null if unsuccessful</returns>
+        </member>
+        <member name="M:resume_testing_api.Services.Users.Interfaces.IUserService.Logout(resume_testing_api.Models.UserModel.Interfaces.IUser)">
+            <summary>
+            Processes the logout functionality, successfully logging the user out and returning success value.
+            </summary>
+            <param name="user">Qualified User object</param>
+            <returns>True if success, False otherwise</returns>
+        </member>
+    </members>
+</doc>
