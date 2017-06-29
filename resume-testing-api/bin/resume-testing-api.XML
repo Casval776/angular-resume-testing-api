@@ -4,6 +4,58 @@
         <name>resume-testing-api</name>
     </assembly>
     <members>
+        <member name="T:resume_testing_api.Controllers.Blogs.BlogPostController">
+            <summary>
+            Public facing end-point to handle external blog-related requests.
+            </summary>
+            <seealso cref="T:System.Web.Http.ApiController" />
+            <seealso cref="T:resume_testing_api.Controllers.Blogs.Interfaces.IBlogPostController" />
+        </member>
+        <member name="M:resume_testing_api.Controllers.Blogs.BlogPostController.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:resume_testing_api.Controllers.Blogs.BlogPostController"/> class.
+            </summary>
+        </member>
+        <member name="M:resume_testing_api.Controllers.Blogs.BlogPostController.GetPost(resume_testing_api.Models.BlogModel.BlogPost)">
+            <summary>
+            Gets blog posts matching criteria specified in object properties
+            </summary>
+            <param name="post">The post.</param>
+            <returns>
+            Ok(IEnumerable of IBlogPost)
+            </returns>
+        </member>
+        <member name="M:resume_testing_api.Controllers.Blogs.BlogPostController.GetPosts">
+            <summary>
+            Gets a collection of blog posts.
+            </summary>
+            <returns>
+            Ok(IEnumerable of IBlogPost)
+            </returns>
+        </member>
+        <member name="T:resume_testing_api.Controllers.Blogs.Interfaces.IBlogPostController">
+            <summary>
+            BlogPostController interface used to wrap collections of controllers in generic functionality.
+            </summary>
+        </member>
+        <member name="M:resume_testing_api.Controllers.Blogs.Interfaces.IBlogPostController.GetPosts">
+            <summary>
+            Gets a collection of blog posts.
+            </summary>
+            <returns>Ok(IEnumerable of IBlogPost)</returns>
+        </member>
+        <member name="M:resume_testing_api.Controllers.Blogs.Interfaces.IBlogPostController.GetPost(resume_testing_api.Models.BlogModel.BlogPost)">
+            <summary>
+            Gets blog posts matching criteria specified in object properties
+            </summary>
+            <param name="post">The post.</param>
+            <returns>Ok(IEnumerable of IBlogPost)</returns>
+        </member>
+        <member name="T:resume_testing_api.Controllers.Users.Interfaces.IUserController">
+            <summary>
+            Interface for public-facing endpoints related to User domain model objects.
+            </summary>
+        </member>
         <member name="M:resume_testing_api.Controllers.Users.Interfaces.IUserController.Login(resume_testing_api.Models.UserModel.User)">
             <summary>
             Public-facing endpoint to log in a user with the specified credentials.
@@ -17,6 +69,23 @@
             </summary>
             <param name="user">Qualified User object containing username/token</param>
             <returns>IHttpActionResult.Ok with result of logout process</returns>
+        </member>
+        <member name="T:resume_testing_api.Controllers.Users.UserController">
+            <summary>
+            Implementation of the IUserController interface specifically used for basic User domain model objects
+            </summary>
+            <seealso cref="T:System.Web.Http.ApiController" />
+            <seealso cref="T:resume_testing_api.Controllers.Users.Interfaces.IUserController" />
+        </member>
+        <member name="F:resume_testing_api.Controllers.Users.UserController.svc">
+            <summary>
+            The IUserService object used to process and transform data.
+            </summary>
+        </member>
+        <member name="M:resume_testing_api.Controllers.Users.UserController.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:resume_testing_api.Controllers.Users.UserController"/> class.
+            </summary>
         </member>
         <member name="M:resume_testing_api.Controllers.Users.UserController.Login(resume_testing_api.Models.UserModel.User)">
             <summary>
@@ -37,6 +106,238 @@
             </returns>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
+        <member name="T:resume_testing_api.Helpers.Users.UserHelper">
+            <summary>
+            Helper class to encapsulate common functions to the IUser domain model object.
+            </summary>
+        </member>
+        <member name="M:resume_testing_api.Helpers.Users.UserHelper.GenerateMockToken(resume_testing_api.Models.UserModel.Interfaces.IUser)">
+            <summary>
+            Generates the mock token.
+            </summary>
+            <param name="user">The user.</param>
+            <returns></returns>
+        </member>
+        <member name="T:resume_testing_api.Models.BlogModel.BlogPost">
+            <summary>
+            BlogPost domain model object containing all relevant data to Blog Posts.
+            </summary>
+            <seealso cref="T:resume_testing_api.Models.BlogModel.Interfaces.IBlogPost" />
+        </member>
+        <member name="P:resume_testing_api.Models.BlogModel.BlogPost.ID">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:resume_testing_api.Models.BlogModel.BlogPost.TitleHeading">
+            <summary>
+            Gets or sets the title heading.
+            </summary>
+            <value>
+            The title heading.
+            </value>
+        </member>
+        <member name="P:resume_testing_api.Models.BlogModel.BlogPost.TitleDescription">
+            <summary>
+            Gets or sets the title description.
+            </summary>
+            <value>
+            The title description.
+            </value>
+        </member>
+        <member name="P:resume_testing_api.Models.BlogModel.BlogPost.PostedDate">
+            <summary>
+            Gets or sets the posted date.
+            </summary>
+            <value>
+            The posted date.
+            </value>
+        </member>
+        <member name="P:resume_testing_api.Models.BlogModel.BlogPost.BlogBody">
+            <summary>
+            Gets or sets the blog body.
+            </summary>
+            <value>
+            The blog body.
+            </value>
+        </member>
+        <member name="P:resume_testing_api.Models.BlogModel.BlogPost.BlogComments">
+            <summary>
+            Gets or sets the blog comments.
+            </summary>
+            <value>
+            The blog comments.
+            </value>
+        </member>
+        <member name="T:resume_testing_api.Models.BlogModel.Interfaces.IBlogPost">
+            <summary>
+            Interface used to wrap Blog Post domain model objects in generic functionality
+            </summary>
+        </member>
+        <member name="P:resume_testing_api.Models.BlogModel.Interfaces.IBlogPost.ID">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:resume_testing_api.Models.BlogModel.Interfaces.IBlogPost.TitleHeading">
+            <summary>
+            Gets or sets the title heading.
+            </summary>
+            <value>
+            The title heading.
+            </value>
+        </member>
+        <member name="P:resume_testing_api.Models.BlogModel.Interfaces.IBlogPost.TitleDescription">
+            <summary>
+            Gets or sets the title description.
+            </summary>
+            <value>
+            The title description.
+            </value>
+        </member>
+        <member name="P:resume_testing_api.Models.BlogModel.Interfaces.IBlogPost.PostedDate">
+            <summary>
+            Gets or sets the posted date.
+            </summary>
+            <value>
+            The posted date.
+            </value>
+        </member>
+        <member name="P:resume_testing_api.Models.BlogModel.Interfaces.IBlogPost.BlogBody">
+            <summary>
+            Gets or sets the blog body.
+            </summary>
+            <value>
+            The blog body.
+            </value>
+        </member>
+        <member name="P:resume_testing_api.Models.BlogModel.Interfaces.IBlogPost.BlogComments">
+            <summary>
+            Gets or sets the blog comments.
+            </summary>
+            <value>
+            The blog comments.
+            </value>
+        </member>
+        <member name="T:resume_testing_api.Models.UserModel.Interfaces.IUser">
+            <summary>
+            Interface to wrap the User domain model object into generic functionality.
+            </summary>
+        </member>
+        <member name="P:resume_testing_api.Models.UserModel.Interfaces.IUser.Username">
+            <summary>
+            Gets or sets the username.
+            </summary>
+            <value>
+            The username.
+            </value>
+        </member>
+        <member name="P:resume_testing_api.Models.UserModel.Interfaces.IUser.Password">
+            <summary>
+            Gets or sets the password.
+            </summary>
+            <value>
+            The password.
+            </value>
+        </member>
+        <member name="P:resume_testing_api.Models.UserModel.Interfaces.IUser.Token">
+            <summary>
+            Gets or sets the token.
+            </summary>
+            <value>
+            The token.
+            </value>
+        </member>
+        <member name="T:resume_testing_api.Models.UserModel.User">
+            <summary>
+            Implementation of the IUser Interface for basic User domain model objects.
+            </summary>
+            <seealso cref="T:resume_testing_api.Models.UserModel.Interfaces.IUser" />
+        </member>
+        <member name="P:resume_testing_api.Models.UserModel.User.ID">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:resume_testing_api.Models.UserModel.User.Username">
+            <summary>
+            Gets or sets the username.
+            </summary>
+            <value>
+            The username.
+            </value>
+        </member>
+        <member name="P:resume_testing_api.Models.UserModel.User.Password">
+            <summary>
+            Gets or sets the password.
+            </summary>
+            <value>
+            The password.
+            </value>
+        </member>
+        <member name="P:resume_testing_api.Models.UserModel.User.Email">
+            <summary>
+            Gets or sets the email.
+            </summary>
+            <value>
+            The email.
+            </value>
+        </member>
+        <member name="P:resume_testing_api.Models.UserModel.User.Token">
+            <summary>
+            Gets or sets the token.
+            </summary>
+            <value>
+            The token.
+            </value>
+        </member>
+        <member name="T:resume_testing_api.Services.Blogs.BlogPostService">
+            <summary>
+            Implementation of the IBlogPostService interface, supports basic CRUD functionality for the IBlogPost domain model object.
+            </summary>
+            <seealso cref="T:resume_testing_api.Services.Blogs.Interfaces.IBlogPostService" />
+            <seealso cref="T:resume_testing_api.Models.BlogModel.BlogPost"/> 
+        </member>
+        <member name="M:resume_testing_api.Services.Blogs.BlogPostService.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:resume_testing_api.Services.Blogs.BlogPostService"/> class.
+            </summary>
+        </member>
+        <member name="M:resume_testing_api.Services.Blogs.BlogPostService.GetPosts(resume_testing_api.Models.BlogModel.Interfaces.IBlogPost)">
+            <summary>
+            Gets one or more Blog Posts from the mock layer.
+            </summary>
+            <param name="post">Optional Param to specify a single blog post or null for many</param>
+            <returns>
+            Collection of blog posts matching criteria
+            </returns>
+        </member>
+        <member name="T:resume_testing_api.Services.Blogs.Interfaces.IBlogPostService">
+            <summary>
+            Interface for the Blog Post Service to wrap the transformation of Blog Post data generic.
+            </summary>
+        </member>
+        <member name="M:resume_testing_api.Services.Blogs.Interfaces.IBlogPostService.GetPosts(resume_testing_api.Models.BlogModel.Interfaces.IBlogPost)">
+            <summary>
+            Gets one or more Blog Posts from the mock layer.
+            </summary>
+            <param name="post">Optional Param to specify a single blog post or null for many</param>
+            <returns>Collection of blog posts matching criteria</returns>
+        </member>
+        <member name="T:resume_testing_api.Services.Users.Interfaces.IUserService">
+            <summary>
+            Interface used to wrap User-related data transformation functionality into a generic model.
+            </summary>
+        </member>
         <member name="M:resume_testing_api.Services.Users.Interfaces.IUserService.Login(resume_testing_api.Models.UserModel.Interfaces.IUser)">
             <summary>
             Processes the login functionality, successfully logging the user in and returning a token.
@@ -50,6 +351,107 @@
             </summary>
             <param name="user">Qualified User object</param>
             <returns>True if success, False otherwise</returns>
+        </member>
+        <member name="T:resume_testing_api.Services.Users.UserService">
+            <summary>
+            Implementation of the IUserService interface for basic User CRUD operations.
+            </summary>
+            <seealso cref="T:resume_testing_api.Services.Users.Interfaces.IUserService" />
+        </member>
+        <member name="M:resume_testing_api.Services.Users.UserService.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:resume_testing_api.Services.Users.UserService"/> class.
+            </summary>
+        </member>
+        <member name="M:resume_testing_api.Services.Users.UserService.Login(resume_testing_api.Models.UserModel.Interfaces.IUser)">
+            <summary>
+            Processes the login functionality, successfully logging the user in and returning a token.
+            </summary>
+            <param name="user">Qualified User credentials</param>
+            <returns>
+            Login Token or null if unsuccessful
+            </returns>
+        </member>
+        <member name="M:resume_testing_api.Services.Users.UserService.Logout(resume_testing_api.Models.UserModel.Interfaces.IUser)">
+            <summary>
+            Processes the logout functionality, successfully logging the user out and returning success value.
+            </summary>
+            <param name="user">Qualified User object</param>
+            <returns>
+            True if success, False otherwise
+            </returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:resume_testing_api.ViewReaders.Blogs.BlogPostViewReader">
+            <summary>
+            Implementation of the IBlogPostViewReader interface, supports basic interaction with DB/Mock Layer
+            </summary>
+            <seealso cref="T:resume_testing_api.ViewReaders.Blogs.Interfaces.IBlogPostViewReader" />
+        </member>
+        <member name="M:resume_testing_api.ViewReaders.Blogs.BlogPostViewReader.GetPosts(resume_testing_api.Models.BlogModel.Interfaces.IBlogPost)">
+            <summary>
+            Gets the posts matching the passed criteria.
+            </summary>
+            <param name="post">The post containing search criteria.</param>
+            <returns>
+            IEnumerable of IBlogPost containing results.
+            </returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:resume_testing_api.ViewReaders.Blogs.Interfaces.IBlogPostViewReader">
+            <summary>
+            Interface for IBlogPost domain model objects used to wrap DB/Mock Layer interactions in generic functionality.
+            </summary>
+        </member>
+        <member name="M:resume_testing_api.ViewReaders.Blogs.Interfaces.IBlogPostViewReader.GetPosts(resume_testing_api.Models.BlogModel.Interfaces.IBlogPost)">
+            <summary>
+            Gets the posts matching the passed criteria.
+            </summary>
+            <param name="post">The post containing search criteria.</param>
+            <returns>IEnumerable of IBlogPost containing results.</returns>
+        </member>
+        <member name="T:resume_testing_api.ViewReaders.Users.Interfaces.IUserViewReader">
+            <summary>
+            Interface to wrap User-related DB/Mock Layer communications into a generic model.
+            </summary>
+        </member>
+        <member name="M:resume_testing_api.ViewReaders.Users.Interfaces.IUserViewReader.Login(resume_testing_api.Models.UserModel.Interfaces.IUser)">
+            <summary>
+            Logins the specified user.
+            </summary>
+            <param name="user">The user.</param>
+            <returns>String containing a token or null</returns>
+        </member>
+        <member name="M:resume_testing_api.ViewReaders.Users.Interfaces.IUserViewReader.Logout(resume_testing_api.Models.UserModel.Interfaces.IUser)">
+            <summary>
+            Logouts the specified user.
+            </summary>
+            <param name="user">The user.</param>
+            <returns>True if operation was successful, False otherwise</returns>
+        </member>
+        <member name="T:resume_testing_api.ViewReaders.Users.UserViewReader">
+            <summary>
+            ViewReader responsible for communication with database/mock layer
+            </summary>
+            <seealso cref="T:resume_testing_api.ViewReaders.Users.Interfaces.IUserViewReader" />
+        </member>
+        <member name="M:resume_testing_api.ViewReaders.Users.UserViewReader.Login(resume_testing_api.Models.UserModel.Interfaces.IUser)">
+            <summary>
+            Logins the specified user.
+            </summary>
+            <param name="user">The user.</param>
+            <returns>
+            String containing a token or null
+            </returns>
+        </member>
+        <member name="M:resume_testing_api.ViewReaders.Users.UserViewReader.Logout(resume_testing_api.Models.UserModel.Interfaces.IUser)">
+            <summary>
+            Logouts the specified user.
+            </summary>
+            <param name="user">The user.</param>
+            <returns>
+            True if operation was successful, False otherwise
+            </returns>
         </member>
     </members>
 </doc>

@@ -1,12 +1,10 @@
-﻿using resume_testing_api.Models.UserModel;
-using resume_testing_api.Models.UserModel.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using resume_testing_api.Models.UserModel.Interfaces;
 
 namespace resume_testing_api.Services.Users.Interfaces
 {
+    /// <summary>
+    /// Interface used to wrap User-related data transformation functionality into a generic model.
+    /// </summary>
     public interface IUserService
     {
         /// <summary>

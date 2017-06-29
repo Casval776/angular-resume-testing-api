@@ -255,16 +255,25 @@
   <ItemGroup>
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\Blogs\BlogPostController.cs" />
+    <Compile Include="Controllers\Blogs\Interfaces\IBlogPostController.cs" />
     <Compile Include="Controllers\Users\Interfaces\IUserController.cs" />
     <Compile Include="Controllers\Users\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Users\UserHelper.cs" />
+    <Compile Include="Models\BlogModel\BlogPost.cs" />
+    <Compile Include="Models\BlogModel\Interfaces\IBlogPost.cs" />
     <Compile Include="Models\UserModel\Interfaces\IUser.cs" />
     <Compile Include="Models\UserModel\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Blogs\BlogPostService.cs" />
+    <Compile Include="Services\Blogs\Interfaces\IBlogPostService.cs" />
     <Compile Include="Services\Users\Interfaces\IUserService.cs" />
     <Compile Include="Services\Users\UserService.cs" />
+    <Compile Include="ViewReaders\Blogs\BlogPostViewReader.cs" />
+    <Compile Include="ViewReaders\Blogs\Interfaces\IBlogPostViewReader.cs" />
     <Compile Include="ViewReaders\Users\Interfaces\IUserViewReader.cs" />
     <Compile Include="ViewReaders\Users\UserViewReader.cs" />
   </ItemGroup>
