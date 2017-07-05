@@ -23,7 +23,18 @@ namespace resume_testing_api.ViewReaders.Blogs
                     BlogComments = 0,
                     TitleDescription = "This is a description",
                     TitleHeading = "This is a title heading",
-                    PostedDate = DateTime.Today
+                    PostedDate = DateTime.Today,
+                    ThumbnailImage = @"assets/images/banner1.jpg"
+                } },
+                { new BlogPost
+                {
+                    ID = 2,
+                    BlogBody = "This is yet another blog body",
+                    BlogComments = 1,
+                    TitleDescription = "And another title description",
+                    TitleHeading = "Woot! Another title heading!",
+                    PostedDate = new DateTime(1990, 1, 23),
+                    ThumbnailImage = @"assets/images/banner2.jpg"
                 } }
             };
         /// <summary>

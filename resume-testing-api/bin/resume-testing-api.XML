@@ -172,6 +172,14 @@
             The blog comments.
             </value>
         </member>
+        <member name="P:resume_testing_api.Models.BlogModel.BlogPost.ThumbnailImage">
+            <summary>
+            Gets or sets the thumbnail image.
+            </summary>
+            <value>
+            The thumbnail image.
+            </value>
+        </member>
         <member name="T:resume_testing_api.Models.BlogModel.Interfaces.IBlogPost">
             <summary>
             Interface used to wrap Blog Post domain model objects in generic functionality

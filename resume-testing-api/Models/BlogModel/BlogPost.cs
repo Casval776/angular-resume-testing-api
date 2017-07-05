@@ -56,5 +56,13 @@ namespace resume_testing_api.Models.BlogModel
         /// The blog comments.
         /// </value>
         public int BlogComments { get; set; }
+
+        /// <summary>
+        /// Gets or sets the thumbnail image.
+        /// </summary>
+        /// <value>
+        /// The thumbnail image.
+        /// </value>
+        public string ThumbnailImage { get; set; }
     }
 }
