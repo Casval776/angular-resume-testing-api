@@ -156,6 +156,14 @@
             The posted date.
             </value>
         </member>
+        <member name="P:resume_testing_api.Models.BlogModel.BlogPost.DisplayDate">
+            <summary>
+            Gets the display date.
+            </summary>
+            <value>
+            The display date.
+            </value>
+        </member>
         <member name="P:resume_testing_api.Models.BlogModel.BlogPost.BlogBody">
             <summary>
             Gets or sets the blog body.

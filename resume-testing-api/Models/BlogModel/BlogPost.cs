@@ -42,6 +42,17 @@ namespace resume_testing_api.Models.BlogModel
         public DateTime PostedDate { get; set; }
 
         /// <summary>
+        /// Gets the display date.
+        /// </summary>
+        /// <value>
+        /// The display date.
+        /// </value>
+        public string DisplayDate { get
+            {
+                return PostedDate.ToString("dddd, dd MMMM yyyy, hh:mm tt");
+            } }
+
+        /// <summary>
         /// Gets or sets the blog body.
         /// </summary>
         /// <value>
